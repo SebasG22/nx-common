@@ -2,7 +2,36 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "login-access-data": {
+      "root": "libs/login/access-data",
+      "sourceRoot": "libs/login/access-data/src",
+      "projectType": "library",
+      "prefix": "access-data",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/login/access-data/tsconfig.lib.json",
+              "libs/login/access-data/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/login/access-data/jest.config.js",
+            "tsConfig": "libs/login/access-data/tsconfig.spec.json",
+            "setupFile": "libs/login/access-data/src/test-setup.ts"
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -10,5 +39,6 @@
     },
     "defaultCollection": "@nrwl/schematics",
     "packageManager": "npm"
-  }
+  },
+  "defaultProject": "login-access-data"
 }

@@ -16,6 +16,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@common-nx/login/access-data": [
+        "libs/login/access-data/src/index.ts"
+      ]
     }
   },
   "exclude": [
