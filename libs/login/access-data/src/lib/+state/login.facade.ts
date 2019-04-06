@@ -18,7 +18,7 @@ export class LoginFacade {
     this.store.dispatch(new LoadLogin());
   }
 
-  loginUserWithFirebaseProvider() {
+  loginUserWithFirebaseProvider(providerInformation: string) {
     this.store.dispatch(new LoginUserWithFirebaseProvider());
   }
 

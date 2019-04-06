@@ -16,13 +16,13 @@ import { AppFacade } from './+state/app.facade';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),
-    LoginAccessDataModule.forRoot(),
     StoreModule.forRoot(
       { app: appReducer },
       {
@@ -31,7 +31,10 @@ import { storeFreeze } from 'ngrx-store-freeze';
       }
     ),
     EffectsModule.forRoot([AppEffects]),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    RouterModule.forRoot([
+      { path: 'login', loadChildren: '@common-nx/login/feature-shell#LoginFeatureShellModule' }
+    ])
   ],
   providers: [AppFacade],
   bootstrap: [AppComponent]

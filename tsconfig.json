@@ -18,6 +18,12 @@
     "paths": {
       "@common-nx/login/access-data": [
         "libs/login/access-data/src/index.ts"
+      ],
+      "@common-nx/login/ui": [
+        "libs/login/ui/src/index.ts"
+      ],
+      "@common-nx/login/feature-shell": [
+        "libs/login/feature-shell/src/index.ts"
       ]
     }
   },

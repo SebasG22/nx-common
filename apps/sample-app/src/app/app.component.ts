@@ -9,7 +9,7 @@ import { LoginFacade } from '@common-nx/login/access-data';
 export class AppComponent {
   title = 'sample-app';
 
-  constructor(private loginFacade: LoginFacade) {
-    this.loginFacade.loginUserWithFirebaseProvider();
-  }
+  // constructor(private loginFacade: LoginFacade) {
+  //   this.loginFacade.loginUserWithFirebaseProvider();
+  // }
 }

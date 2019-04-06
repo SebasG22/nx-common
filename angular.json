@@ -153,6 +153,62 @@
           }
         }
       }
+    },
+    "login-ui": {
+      "root": "libs/login/ui",
+      "sourceRoot": "libs/login/ui/src",
+      "projectType": "library",
+      "prefix": "common-nx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/login/ui/tsconfig.lib.json",
+              "libs/login/ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/login/ui/jest.config.js",
+            "tsConfig": "libs/login/ui/tsconfig.spec.json",
+            "setupFile": "libs/login/ui/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "login-feature-shell": {
+      "root": "libs/login/feature-shell",
+      "sourceRoot": "libs/login/feature-shell/src",
+      "projectType": "library",
+      "prefix": "common-nx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/login/feature-shell/tsconfig.lib.json",
+              "libs/login/feature-shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/login/feature-shell/jest.config.js",
+            "tsConfig": "libs/login/feature-shell/tsconfig.spec.json",
+            "setupFile": "libs/login/feature-shell/src/test-setup.ts"
+          }
+        }
+      }
     }
   },
   "cli": {

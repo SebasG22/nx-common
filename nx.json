@@ -18,6 +18,18 @@
     },
     "sample-app-e2e": {
       "tags": []
+    },
+    "login-ui": {
+      "tags": [
+        "scope:login",
+        "type:ui"
+      ]
+    },
+    "login-feature-shell": {
+      "tags": [
+        "scope:login",
+        "type:feature-shell"
+      ]
     }
   }
 }

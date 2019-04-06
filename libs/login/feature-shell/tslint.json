@@ -1,0 +1,17 @@
+{
+  "extends": "../../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "feature-shell-login",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "feature-shell-login",
+      "kebab-case"
+    ]
+  }
+}
