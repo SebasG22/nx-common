@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 
 import { LoginPartialState } from './login.reducer';
 import { loginQuery } from './login.selectors';
-import { LoadLogin } from './login.actions';
+import { LoadLogin, LoginUserWithFirebaseProvider } from './login.actions';
 
 @Injectable()
 export class LoginFacade {
@@ -12,9 +12,15 @@ export class LoginFacade {
   allLogin$ = this.store.pipe(select(loginQuery.getAllLogin));
   selectedLogin$ = this.store.pipe(select(loginQuery.getSelectedLogin));
 
-  constructor(private store: Store<LoginPartialState>) {}
+  constructor(private store: Store<LoginPartialState>) { }
 
   loadAll() {
     this.store.dispatch(new LoadLogin());
   }
+
+  loginUserWithFirebaseProvider() {
+    this.store.dispatch(new LoginUserWithFirebaseProvider());
+  }
+
+
 }

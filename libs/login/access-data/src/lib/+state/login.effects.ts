@@ -7,8 +7,13 @@ import {
   LoadLogin,
   LoginLoaded,
   LoginLoadError,
-  LoginActionTypes
+  LoginActionTypes,
+  LoginUserWithFirebaseProvider,
+  LoginUserWithFirebaseProviderError
 } from './login.actions';
+import { LoginService } from '../login.service';
+
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class LoginEffects {
@@ -27,8 +32,29 @@ export class LoginEffects {
     }
   );
 
+
+  @Effect() loginUserWithFirebaseProvider$ = this.dataPersistence.fetch(
+    LoginActionTypes.LoginUserWithFirebaseProvider,
+    {
+      run: (action: LoginUserWithFirebaseProvider, state: LoginPartialState) => {
+        // Your custom REST 'load' logic goes here. For now just return an empty list...
+        return this.loginService.loginWithGoogle().pipe(
+          map((user) => {
+            console.warn(user);
+            return new LoginLoaded([]);
+          }));
+      },
+
+      onError: (action: LoginUserWithFirebaseProvider, error) => {
+        console.error('Error', error);
+        return new LoginUserWithFirebaseProviderError(error);
+      }
+    }
+  );
+
   constructor(
     private actions$: Actions,
-    private dataPersistence: DataPersistence<LoginPartialState>
-  ) {}
+    private dataPersistence: DataPersistence<LoginPartialState>,
+    private loginService: LoginService
+  ) { }
 }

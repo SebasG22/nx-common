@@ -26,12 +26,12 @@ export class LoginLoaded implements Action {
 
 export class LoginUserWithFirebaseProvider implements Action {
   readonly type = LoginActionTypes.LoginUserWithFirebaseProvider;
-  constructor(public payload: { provider: any }) { }
+  constructor(public payload: { provider: any } = null) { }
 }
 
 export class UserLoggedWithFirebaseProvider implements Action {
   readonly type = LoginActionTypes.LoginUserWithFirebaseProvider;
-  constructor(public payload: Entity) { }
+  constructor(public payload: string) { }
 }
 
 export class LoginUserWithFirebaseProviderError implements Action {

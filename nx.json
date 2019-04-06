@@ -12,6 +12,12 @@
       "tags": [
         "scope:login;type:access-data;platform:desktop"
       ]
+    },
+    "sample-app": {
+      "tags": []
+    },
+    "sample-app-e2e": {
+      "tags": []
     }
   }
 }
