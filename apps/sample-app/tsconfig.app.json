@@ -10,6 +10,7 @@
   ],
   "include": [
     "**/*.ts",
-    "../../libs/login/feature-shell/src/lib/login-feature-shell.module.ts"
+    "../../libs/login/feature-shell/src/lib/login-feature-shell.module.ts",
+    "../../libs/login/feature-shell/src/lib/lazy.module.ts"
   ]
 }

@@ -17,6 +17,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { RouterModule } from '@angular/router';
+import { LoginUIModule } from '@common-nx/login/ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +34,7 @@ import { RouterModule } from '@angular/router';
     EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     RouterModule.forRoot([
-      { path: 'login', loadChildren: '@common-nx/login/feature-shell#LoginFeatureShellModule' }
+      { path: 'login', loadChildren: '@common-nx/login/feature-shell#LoginFeatureShellModule' },
     ])
   ],
   providers: [AppFacade],
