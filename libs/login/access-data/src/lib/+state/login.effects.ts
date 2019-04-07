@@ -14,6 +14,7 @@ import {
 import { LoginService } from '../login.service';
 
 import { map } from 'rxjs/operators';
+import { LoginModalUIService } from '@common-nx/shared/login-dialog-ui';
 
 @Injectable()
 export class LoginEffects {
@@ -47,6 +48,7 @@ export class LoginEffects {
 
       onError: (action: LoginUserWithFirebaseProvider, error) => {
         console.error('Error', error);
+        this.loginModalUIService.openCheckingAuthModal();
         return new LoginUserWithFirebaseProviderError(error);
       }
     }
@@ -55,6 +57,7 @@ export class LoginEffects {
   constructor(
     private actions$: Actions,
     private dataPersistence: DataPersistence<LoginPartialState>,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private loginModalUIService: LoginModalUIService
   ) { }
 }

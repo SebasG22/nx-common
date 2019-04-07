@@ -30,6 +30,24 @@
         "scope:login",
         "type:feature-shell"
       ]
+    },
+    "shared-dialog-ui": {
+      "tags": [
+        "scope:shared",
+        "type:ui"
+      ]
+    },
+    "shared-login-ui": {
+      "tags": [
+        "scope:shared",
+        "type:ui"
+      ]
+    },
+    "shared-login-dialog-ui": {
+      "tags": [
+        "scope:shared",
+        "type:ui"
+      ]
     }
   }
 }

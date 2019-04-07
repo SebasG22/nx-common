@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CheckingAuthModalComponent } from './checking-auth-modal.component';
+import { CheckingAuthModalComponent } from './checking-auth-dialog.component';
 
 describe('CheckingAuthModalComponent', () => {
   let component: CheckingAuthModalComponent;

@@ -8,7 +8,4 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  closeModal() {
-    console.log('close modal clicked');
-  }
 }

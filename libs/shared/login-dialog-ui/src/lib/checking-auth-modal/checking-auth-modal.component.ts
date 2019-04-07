@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'login-ui-checking-auth-modal',
+  selector: 'shared-login-ui-checking-auth-modal',
   templateUrl: './checking-auth-modal.component.html',
   styleUrls: ['./checking-auth-modal.component.scss']
 })

@@ -15,6 +15,7 @@ import { LoginService } from './login.service';
 import { ActionReducer } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
 import { storeFreeze } from 'ngrx-store-freeze';
+import { SharedLoginModalUiModule } from '@common-nx/shared/login-dialog-ui';
 
 export function logger(reducer: ActionReducer<any>): any {
   // default, no options
@@ -25,6 +26,7 @@ export function logger(reducer: ActionReducer<any>): any {
 @NgModule({
   imports: [
     CommonModule,
+    SharedLoginModalUiModule,
     StoreModule.forFeature(LOGIN_FEATURE_KEY, loginReducer, {
       initialState: loginInitialState,
       metaReducers: true ? [storeFreeze, logger] : []

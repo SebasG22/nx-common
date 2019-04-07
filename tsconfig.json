@@ -24,6 +24,15 @@
       ],
       "@common-nx/login/feature-shell": [
         "libs/login/feature-shell/src/index.ts"
+      ],
+      "@common-nx/shared/dialog-ui": [
+        "libs/shared/dialog-ui/src/index.ts"
+      ],
+      "@common-nx/shared/login-ui": [
+        "libs/shared/login-ui/src/index.ts"
+      ],
+      "@common-nx/shared/login-dialog-ui": [
+        "libs/shared/login-dialog-ui/src/index.ts"
       ]
     }
   },

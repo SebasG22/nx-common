@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginFacade } from '@common-nx/login/access-data';
-import { ModalService } from '@common-nx/login/ui';
-import { CheckingAuthModalComponent } from '@common-nx/login/ui';
+import { LoginModalUIService } from '@common-nx/shared/login-dialog-ui';
 
 @Component({
   selector: 'feature-shell-login-main-container',
@@ -12,11 +11,15 @@ export class MainContainerComponent implements OnInit {
 
   constructor(
     private loginFacade: LoginFacade,
-    private modalService: ModalService
+    private sharedModalLoginService: LoginModalUIService
   ) { }
 
   ngOnInit() {
-    this.modalService.init(CheckingAuthModalComponent, {}, {});
+    this.sharedModalLoginService.openCheckingAuthModal();
+  }
+
+  closeModal() {
+    this.sharedModalLoginService.closeModal();
   }
 
   loginWithProvider(providerInformation: string) {

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
-import { LoginAccessDataModule } from '@common-nx/login/access-data';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {
@@ -17,7 +16,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { RouterModule } from '@angular/router';
-import { LoginUIModule } from '@common-nx/login/ui';
 
 @NgModule({
   declarations: [AppComponent],
