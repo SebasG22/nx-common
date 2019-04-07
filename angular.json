@@ -16,9 +16,7 @@
               "libs/login/access-data/tsconfig.lib.json",
               "libs/login/access-data/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -54,9 +52,7 @@
               "apps/sample-app/src/favicon.ico",
               "apps/sample-app/src/assets"
             ],
-            "styles": [
-              "apps/sample-app/src/styles.scss"
-            ],
+            "styles": ["apps/sample-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -110,9 +106,7 @@
               "apps/sample-app/tsconfig.app.json",
               "apps/sample-app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -147,9 +141,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/sample-app-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -167,9 +159,7 @@
               "libs/login/ui/tsconfig.lib.json",
               "libs/login/ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -195,9 +185,7 @@
               "libs/login/feature-shell/tsconfig.lib.json",
               "libs/login/feature-shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -223,9 +211,7 @@
               "libs/shared/dialog-ui/tsconfig.lib.json",
               "libs/shared/dialog-ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -251,9 +237,7 @@
               "libs/shared/login-ui/tsconfig.lib.json",
               "libs/shared/login-ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -279,9 +263,7 @@
               "libs/shared/login-dialog-ui/tsconfig.lib.json",
               "libs/shared/login-dialog-ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -303,5 +285,18 @@
     "defaultCollection": "@nrwl/schematics",
     "packageManager": "npm"
   },
-  "defaultProject": "login-access-data"
+  "defaultProject": "login-access-data",
+  "schematics": {
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "karma",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:application": {
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
+    }
+  }
 }

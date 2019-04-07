@@ -1,43 +1,29 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "importHelpers": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@common-nx/login/access-data": [
-        "libs/login/access-data/src/index.ts"
-      ],
-      "@common-nx/login/ui": [
-        "libs/login/ui/src/index.ts"
-      ],
+      "@common-nx/login/access-data": ["libs/login/access-data/src/index.ts"],
+      "@common-nx/login/ui": ["libs/login/ui/src/index.ts"],
       "@common-nx/login/feature-shell": [
         "libs/login/feature-shell/src/index.ts"
       ],
-      "@common-nx/shared/dialog-ui": [
-        "libs/shared/dialog-ui/src/index.ts"
-      ],
-      "@common-nx/shared/login-ui": [
-        "libs/shared/login-ui/src/index.ts"
-      ],
+      "@common-nx/shared/dialog-ui": ["libs/shared/dialog-ui/src/index.ts"],
+      "@common-nx/shared/login-ui": ["libs/shared/login-ui/src/index.ts"],
       "@common-nx/shared/login-dialog-ui": [
         "libs/shared/login-dialog-ui/src/index.ts"
       ]
-    }
+    },
+    "module": "es2015"
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
