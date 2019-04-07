@@ -8,6 +8,8 @@ export enum LoginActionTypes {
   LoginUserWithFirebaseProvider = '[Login] Login User With Firebase Provider',
   UserLoggedWithFirebaseProvider = '[Login] User Logged With Firebase Provider',
   LoginUserWithFirebaseProviderError = '[Login] LoginUserWithFirebaseProvider Error',
+  ListenAuth = '[Login] Listen Auth',
+  AuthChanged = '[Login] Auth Change'
 }
 
 export class LoadLogin implements Action {
@@ -39,7 +41,16 @@ export class LoginUserWithFirebaseProviderError implements Action {
   constructor(public payload: Entity) { }
 }
 
-export type LoginAction = LoadLogin | LoginLoaded | LoginLoadError | LoginUserWithFirebaseProvider | UserLoggedWithFirebaseProvider | LoginUserWithFirebaseProviderError;
+export class ListenAuth implements Action {
+  readonly type = LoginActionTypes.ListenAuth;
+}
+
+export class AuthChanged implements Action {
+  readonly type = LoginActionTypes.AuthChanged;
+  constructor(public payload: Entity) { }
+}
+
+export type LoginAction = LoadLogin | LoginLoaded | LoginLoadError | LoginUserWithFirebaseProvider | UserLoggedWithFirebaseProvider | LoginUserWithFirebaseProviderError | ListenAuth | AuthChanged;
 
 export const fromLoginActions = {
   LoadLogin,
@@ -47,5 +58,7 @@ export const fromLoginActions = {
   LoginLoadError,
   LoginUserWithFirebaseProvider,
   UserLoggedWithFirebaseProvider,
-  LoginUserWithFirebaseProviderError
+  LoginUserWithFirebaseProviderError,
+  ListenAuth,
+  AuthChanged
 };

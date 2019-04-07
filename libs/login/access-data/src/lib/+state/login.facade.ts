@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
-import { LoginPartialState } from './login.reducer';
+import { LoginPartialState, Entity } from './login.reducer';
 import { loginQuery } from './login.selectors';
-import { LoadLogin, LoginUserWithFirebaseProvider } from './login.actions';
+import { LoadLogin, LoginUserWithFirebaseProvider, AuthChanged } from './login.actions';
 
 @Injectable()
 export class LoginFacade {
@@ -20,6 +20,10 @@ export class LoginFacade {
 
   loginUserWithFirebaseProvider(providerInformation: string) {
     this.store.dispatch(new LoginUserWithFirebaseProvider());
+  }
+
+  authChanged(payload: Entity = null) {
+    this.store.dispatch(new AuthChanged(payload));
   }
 
 

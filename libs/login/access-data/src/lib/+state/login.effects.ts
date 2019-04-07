@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions } from '@ngrx/effects';
+import { Effect, Actions, ofType, ROOT_EFFECTS_INIT, OnInitEffects } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/nx';
 
 import { LoginPartialState } from './login.reducer';
@@ -9,15 +9,42 @@ import {
   LoginLoadError,
   LoginActionTypes,
   LoginUserWithFirebaseProvider,
-  LoginUserWithFirebaseProviderError
+  LoginUserWithFirebaseProviderError,
+  ListenAuth,
+  AuthChanged
 } from './login.actions';
 import { LoginService } from '../login.service';
 
 import { map } from 'rxjs/operators';
 import { LoginModalUIService } from '@common-nx/shared/login-dialog-ui';
+import { Observable, defer, of, asyncScheduler } from 'rxjs';
+import { INIT, Action } from '@ngrx/store';
+import { UserInfo, User } from 'firebase';
 
 @Injectable()
-export class LoginEffects {
+export class LoginEffects implements OnInitEffects {
+
+  // @Effect()
+  // $init = of(new ListenAuth, asyncScheduler);
+
+  @Effect() listenAuth$ = this.dataPersistence.fetch(
+    LoginActionTypes.ListenAuth,
+    {
+      run: (action: ListenAuth, state: LoginPartialState) => {
+        return <any>this.loginService.listenAuth().pipe(
+          map((data: User) => {
+            const { displayName, email, phoneNumber, photoURL, providerId, uid } = data;
+            return new AuthChanged({ displayName, email, phoneNumber, photoURL, providerId, uid });
+          })
+        )
+      },
+
+      onError: (action: ListenAuth, error) => {
+        console.error('Error', error);
+      }
+    }
+  );
+
   @Effect() loadLogin$ = this.dataPersistence.fetch(
     LoginActionTypes.LoadLogin,
     {
@@ -53,6 +80,10 @@ export class LoginEffects {
       }
     }
   );
+
+  ngrxOnInitEffects(): Action {
+    return { type: LoginActionTypes.ListenAuth };
+  }
 
   constructor(
     private actions$: Actions,

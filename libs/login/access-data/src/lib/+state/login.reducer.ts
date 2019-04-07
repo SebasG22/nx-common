@@ -1,4 +1,5 @@
 import { LoginAction, LoginActionTypes } from './login.actions';
+import { auth, User } from 'firebase';
 
 export const LOGIN_FEATURE_KEY = 'login';
 
@@ -11,7 +12,7 @@ export const LOGIN_FEATURE_KEY = 'login';
  */
 
 /* tslint:disable:no-empty-interface */
-export interface Entity {}
+export interface Entity { }
 
 export interface LoginState {
   list: Entity[]; // list of Login; analogous to a sql normalized table

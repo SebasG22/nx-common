@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth, User } from 'firebase/app';
 import { from, Observable } from 'rxjs';
-import { FirebaseAuth } from '@angular/fire';
 
 @Injectable()
 export class LoginService {
-    constructor(public afAuth: AngularFireAuth) {
-        this.afAuth.authState.subscribe((user: any) => {
-            console.warn('authState', user);
-        })
+    constructor(
+        public afAuth: AngularFireAuth
+    ) { }
+
+    listenAuth(): Observable<User> {
+        return this.afAuth.authState;
     }
 
     loginWithGoogle(): Observable<auth.UserCredential> {
