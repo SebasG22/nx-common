@@ -1,0 +1,96 @@
+<svg width="444pt" height="412pt" viewBox="0.00 0.00 443.56 411.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(7.992 403.992)">
+<title>G</title>
+<polygon fill="#ffffff" stroke="transparent" points="-7.992,7.992 -7.992,-403.992 435.5721,-403.992 435.5721,7.992 -7.992,7.992"></polygon>
+<!-- login&#45;access&#45;data -->
+<g id="node1" class="node">
+<title>login-access-data</title>
+<ellipse fill="#efefef" stroke="#000000" cx="86.6958" cy="-162" rx="86.892" ry="18"></ellipse>
+<text text-anchor="middle" x="86.6958" y="-157.8" font-family="Arial" font-size="14.00" fill="#000000">login-access-data</text>
+</g>
+<!-- shared&#45;login&#45;dialog&#45;ui -->
+<g id="node2" class="node">
+<title>shared-login-dialog-ui</title>
+<ellipse fill="#efefef" stroke="#000000" cx="143.6958" cy="-90" rx="103.7164" ry="18"></ellipse>
+<text text-anchor="middle" x="143.6958" y="-85.8" font-family="Arial" font-size="14.00" fill="#000000">shared-login-dialog-ui</text>
+</g>
+<!-- login&#45;access&#45;data&#45;&gt;shared&#45;login&#45;dialog&#45;ui -->
+<g id="edge1" class="edge">
+<title>login-access-data-&gt;shared-login-dialog-ui</title>
+<path fill="none" stroke="#757575" d="M100.7857,-144.2022C107.5682,-135.6348 115.8284,-125.2009 123.2835,-115.7839"></path>
+<polygon fill="#757575" stroke="#757575" points="126.1075,-117.8555 129.5704,-107.8425 120.6192,-113.5106 126.1075,-117.8555"></polygon>
+</g>
+<!-- shared&#45;dialog&#45;ui -->
+<g id="node7" class="node">
+<title>shared-dialog-ui</title>
+<ellipse fill="#efefef" stroke="#000000" cx="143.6958" cy="-18" rx="80.0061" ry="18"></ellipse>
+<text text-anchor="middle" x="143.6958" y="-13.8" font-family="Arial" font-size="14.00" fill="#000000">shared-dialog-ui</text>
+</g>
+<!-- shared&#45;login&#45;dialog&#45;ui&#45;&gt;shared&#45;dialog&#45;ui -->
+<g id="edge7" class="edge">
+<title>shared-login-dialog-ui-&gt;shared-dialog-ui</title>
+<path fill="none" stroke="#757575" d="M143.6958,-71.8314C143.6958,-64.131 143.6958,-54.9743 143.6958,-46.4166"></path>
+<polygon fill="#757575" stroke="#757575" points="147.1959,-46.4132 143.6958,-36.4133 140.1959,-46.4133 147.1959,-46.4132"></polygon>
+</g>
+<!-- login&#45;feature&#45;shell -->
+<g id="node3" class="node">
+<title>login-feature-shell</title>
+<ellipse fill="#efefef" stroke="#000000" cx="201.6958" cy="-234" rx="87.5264" ry="18"></ellipse>
+<text text-anchor="middle" x="201.6958" y="-229.8" font-family="Arial" font-size="14.00" fill="#000000">login-feature-shell</text>
+</g>
+<!-- login&#45;feature&#45;shell&#45;&gt;login&#45;access&#45;data -->
+<g id="edge3" class="edge">
+<title>login-feature-shell-&gt;login-access-data</title>
+<path fill="none" stroke="#757575" d="M174.1504,-216.7542C158.7883,-207.1362 139.4685,-195.0403 122.8973,-184.6653"></path>
+<polygon fill="#757575" stroke="#757575" points="124.3496,-181.4452 114.0164,-179.1051 120.6349,-187.3783 124.3496,-181.4452"></polygon>
+</g>
+<!-- login&#45;feature&#45;shell&#45;&gt;shared&#45;login&#45;dialog&#45;ui -->
+<g id="edge4" class="edge">
+<title>login-feature-shell-&gt;shared-login-dialog-ui</title>
+<path fill="none" stroke="#757575" d="M200.0881,-215.7295C197.9354,-197.0458 193.1037,-167.5099 182.6958,-144 178.3421,-134.1657 172.0047,-124.3501 165.6994,-115.8375"></path>
+<polygon fill="#757575" stroke="#757575" points="168.37,-113.5696 159.4795,-107.8067 162.8357,-117.8559 168.37,-113.5696"></polygon>
+</g>
+<!-- login&#45;ui -->
+<g id="node4" class="node">
+<title>login-ui</title>
+<ellipse fill="#efefef" stroke="#000000" cx="271.6958" cy="-162" rx="42.3068" ry="18"></ellipse>
+<text text-anchor="middle" x="271.6958" y="-157.8" font-family="Arial" font-size="14.00" fill="#000000">login-ui</text>
+</g>
+<!-- login&#45;feature&#45;shell&#45;&gt;login&#45;ui -->
+<g id="edge2" class="edge">
+<title>login-feature-shell-&gt;login-ui</title>
+<path fill="none" stroke="#757575" d="M218.9991,-216.2022C227.7746,-207.1761 238.5641,-196.0783 248.0898,-186.2804"></path>
+<polygon fill="#757575" stroke="#757575" points="250.6121,-188.707 255.0735,-179.0972 245.5932,-183.8274 250.6121,-188.707"></polygon>
+</g>
+<!-- sample&#45;app -->
+<g id="node5" class="node">
+<title>sample-app</title>
+<polygon fill="none" stroke="#000000" points="246.3193,-324 157.0723,-324 157.0723,-288 246.3193,-288 246.3193,-324"></polygon>
+<text text-anchor="middle" x="201.6958" y="-301.8" font-family="Arial" font-size="14.00" fill="#000000">sample-app</text>
+</g>
+<!-- sample&#45;app&#45;&gt;login&#45;feature&#45;shell -->
+<g id="edge5" class="edge">
+<title>sample-app-&gt;login-feature-shell</title>
+<path fill="none" stroke="#757575" stroke-dasharray="1,5" d="M201.6958,-287.8314C201.6958,-280.131 201.6958,-270.9743 201.6958,-262.4166"></path>
+<polygon fill="#757575" stroke="#757575" points="205.1959,-262.4132 201.6958,-252.4133 198.1959,-262.4133 205.1959,-262.4132"></polygon>
+</g>
+<!-- sample&#45;app&#45;e2e -->
+<g id="node6" class="node">
+<title>sample-app-e2e</title>
+<polygon fill="none" stroke="#000000" points="260.3276,-396 143.0639,-396 143.0639,-360 260.3276,-360 260.3276,-396"></polygon>
+<text text-anchor="middle" x="201.6958" y="-373.8" font-family="Arial" font-size="14.00" fill="#000000">sample-app-e2e</text>
+</g>
+<!-- sample&#45;app&#45;e2e&#45;&gt;sample&#45;app -->
+<g id="edge6" class="edge">
+<title>sample-app-e2e-&gt;sample-app</title>
+<path fill="none" stroke="#000000" stroke-width="2" d="M201.6958,-359.8314C201.6958,-352.131 201.6958,-342.9743 201.6958,-334.4166"></path>
+<polygon fill="#000000" stroke="#000000" stroke-width="2" points="205.1959,-334.4132 201.6958,-324.4133 198.1959,-334.4133 205.1959,-334.4132"></polygon>
+</g>
+<!-- shared&#45;login&#45;ui -->
+<g id="node8" class="node">
+<title>shared-login-ui</title>
+<ellipse fill="#efefef" stroke="#000000" cx="352.6958" cy="-378" rx="74.7689" ry="18"></ellipse>
+<text text-anchor="middle" x="352.6958" y="-373.8" font-family="Arial" font-size="14.00" fill="#000000">shared-login-ui</text>
+</g>
+</g>
+</svg>
