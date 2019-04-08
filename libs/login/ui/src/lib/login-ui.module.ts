@@ -1,14 +1,17 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirebaseProviderItemComponent } from './firebase-provider-item/firebase-provider-item.component';
+import { FirebaseProvidersComponent } from './firebase-providers/firebase-providers.component';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [
-    FirebaseProviderItemComponent
+    FirebaseProviderItemComponent,
+    FirebaseProvidersComponent
   ],
   exports: [
-    FirebaseProviderItemComponent
+    FirebaseProviderItemComponent,
+    FirebaseProvidersComponent
   ],
 })
 export class LoginUIModule { }

@@ -9,9 +9,7 @@
   },
   "projects": {
     "login-access-data": {
-      "tags": [
-        "scope:login;type:access-data;platform:desktop"
-      ]
+      "tags": ["scope:login;type:access-data;platform:desktop"]
     },
     "sample-app": {
       "tags": []
@@ -20,34 +18,22 @@
       "tags": []
     },
     "login-ui": {
-      "tags": [
-        "scope:login",
-        "type:ui"
-      ]
+      "tags": ["scope:login", "type:ui"]
     },
     "login-feature-shell": {
-      "tags": [
-        "scope:login",
-        "type:feature-shell"
-      ]
+      "tags": ["scope:login", "type:feature-shell"]
     },
     "shared-dialog-ui": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     },
     "shared-login-ui": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
     },
     "shared-login-dialog-ui": {
-      "tags": [
-        "scope:shared",
-        "type:ui"
-      ]
+      "tags": ["scope:shared", "type:ui"]
+    },
+    "login-utils": {
+      "tags": ["scope:login", "type:utils"]
     }
   }
 }

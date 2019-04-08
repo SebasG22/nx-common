@@ -33,8 +33,11 @@ export class LoginEffects implements OnInitEffects {
       run: (action: ListenAuth, state: LoginPartialState) => {
         return <any>this.loginService.listenAuth().pipe(
           map((data: User) => {
-            const { displayName, email, phoneNumber, photoURL, providerId, uid } = data;
-            return new AuthChanged({ displayName, email, phoneNumber, photoURL, providerId, uid });
+            if(data){
+              const { displayName, email, phoneNumber, photoURL, providerId, uid } = data;
+              return new AuthChanged({ displayName, email, phoneNumber, photoURL, providerId, uid });
+            }
+            return new AuthChanged(data);
           })
         )
       },

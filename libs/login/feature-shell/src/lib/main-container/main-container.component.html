@@ -1,4 +1,3 @@
-<login-ui-firebase-provider-item [providerInformation]="'Google'" (providerClicked)="loginWithProvider($event)">
-</login-ui-firebase-provider-item>
+<login-ui-firebase-providers [providers]="firebaseProviders" (providerClicked)="loginWithProvider($event)"></login-ui-firebase-providers>
 <div id="modal-container" class="hidden"></div>
 <div id="overlay" class="hidden" (click)="closeModal()"></div>

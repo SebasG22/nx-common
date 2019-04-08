@@ -14,6 +14,18 @@ export class MainContainerComponent implements OnInit {
     private sharedModalLoginService: LoginModalUIService
   ) { }
 
+  public firebaseProviders = [
+    {
+      name: 'Google'
+    },
+    {
+      name: 'Facebook'
+    },
+    {
+      name: 'Github'
+    }
+  ]
+
   ngOnInit() {
     this.sharedModalLoginService.openCheckingAuthModal();
   }
@@ -22,8 +34,8 @@ export class MainContainerComponent implements OnInit {
     this.sharedModalLoginService.closeModal();
   }
 
-  loginWithProvider(providerInformation: string) {
-    this.loginFacade.loginUserWithFirebaseProvider(providerInformation);
+  loginWithProvider(providerInformation: any) {
+    this.loginFacade.loginUserWithFirebaseProvider(providerInformation.name);
   }
 
 }

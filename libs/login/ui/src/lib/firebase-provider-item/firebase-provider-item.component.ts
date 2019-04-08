@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./firebase-provider-item.component.scss']
 })
 export class FirebaseProviderItemComponent implements OnInit {
-  @Input() providerInformation: string;
+  @Input() providerInformation: any;
 
   @Output() providerClicked: EventEmitter<string> = new EventEmitter();
   constructor() {}

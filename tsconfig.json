@@ -21,7 +21,8 @@
       "@common-nx/shared/login-ui": ["libs/shared/login-ui/src/index.ts"],
       "@common-nx/shared/login-dialog-ui": [
         "libs/shared/login-dialog-ui/src/index.ts"
-      ]
+      ],
+      "@common-nx/login/utils": ["libs/login/utils/src/index.ts"]
     },
     "module": "es2015"
   },

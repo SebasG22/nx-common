@@ -1,0 +1,3 @@
+<ng-container *ngFor="let provider of providers">
+  <login-ui-firebase-provider-item [providerInformation]="provider" (providerClicked)="providerClick($event)"></login-ui-firebase-provider-item>
+</ng-container>
