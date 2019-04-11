@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FirebaseProviderItemComponent } from './firebase-provider-item.component';
+import { Subject } from 'rxjs';
 
 describe('FirebaseProviderItemComponent', () => {
   let component: FirebaseProviderItemComponent;
@@ -16,12 +17,16 @@ describe('FirebaseProviderItemComponent', () => {
   }));
 
   beforeEach(() => {
+    
+
     fixture = TestBed.createComponent(FirebaseProviderItemComponent);
     component = fixture.componentInstance;
+    component.providerInformation = { name: 'Google' };
     fixture.detectChanges();
   });
 
   it('should create', () => {
+
     expect(component).toBeTruthy();
   });
 });

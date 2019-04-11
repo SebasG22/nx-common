@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { FirebaseProvidersComponent } from './firebase-providers.component';
 import { FirebaseProviderItemComponent } from '../firebase-provider-item/firebase-provider-item.component';
+import { firebaseProviderInformationMock } from '../login-feature-shell.mocks';
 
 describe('FirebaseProvidersComponent', () => {
   let component: FirebaseProvidersComponent;
@@ -29,13 +30,17 @@ describe('FirebaseProvidersComponent', () => {
 
   describe('providerClick', () =>{
 
-    it('should emit the provider information when providerClick was called', () => {
-      spyOn(component,'providerClicked');
-      const providerInformation = { name: 'Google' };
-      
-      component.providerClick(providerInformation);
+    let providerInformation;
+    beforeEach(() => {
+      providerInformation = firebaseProviderInformationMock;
+      spyOn(component.providerClicked,'emit');
+    }); 
 
-      expect(component.providerClicked).toHaveBeenCalledWith(providerInformation);
+    it('should emit the provider information when providerClick was called', () => {
+      component.providerClick(providerInformation);
+      fixture.detectChanges();
+
+      expect(component.providerClicked.emit).toHaveBeenCalledWith(providerInformation);
     });
   });
 });
