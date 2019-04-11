@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { FirebaseProvidersComponent } from './firebase-providers.component';
 import { FirebaseProviderItemComponent } from '../firebase-provider-item/firebase-provider-item.component';
-import { firebaseProviderInformationMock } from '../login-feature-shell.mocks';
+import { firebaseProviderInformationMock } from '@common-nx/login/utils';
 
 describe('FirebaseProvidersComponent', () => {
   let component: FirebaseProvidersComponent;
@@ -31,12 +31,14 @@ describe('FirebaseProvidersComponent', () => {
   describe('providerClick', () =>{
 
     let providerInformation;
+
     beforeEach(() => {
       providerInformation = firebaseProviderInformationMock;
       spyOn(component.providerClicked,'emit');
     }); 
 
     it('should emit the provider information when providerClick was called', () => {
+      console.log(providerInformation);
       component.providerClick(providerInformation);
       fixture.detectChanges();
 

@@ -293,11 +293,11 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/builders:jest",
           "options": {
-            "main": "libs/login/utils/src/test.ts",
+            "jestConfig": "libs/login/utils/jest.config.js",
             "tsConfig": "libs/login/utils/tsconfig.spec.json",
-            "karmaConfig": "libs/login/utils/karma.conf.js"
+            "setupFile": "libs/login/utils/src/test-setup.ts"
           }
         }
       },
