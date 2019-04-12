@@ -34,6 +34,9 @@
     },
     "login-utils": {
       "tags": ["scope:login", "type:utils"]
+    },
+    "shared-firestore-worker-access-data": {
+      "tags": ["scope:shared", "type:access-data"]
     }
   }
 }

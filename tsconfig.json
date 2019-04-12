@@ -22,7 +22,10 @@
       "@common-nx/shared/login-dialog-ui": [
         "libs/shared/login-dialog-ui/src/index.ts"
       ],
-      "@common-nx/login/utils": ["libs/login/utils/src/index.ts"]
+      "@common-nx/login/utils": ["libs/login/utils/src/index.ts"],
+      "@common-nx/shared/firestore-worker/access-data": [
+        "libs/shared/firestore-worker/access-data/src/index.ts"
+      ]
     },
     "module": "es2015"
   },
