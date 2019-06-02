@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions, ofType, ROOT_EFFECTS_INIT, OnInitEffects } from '@ngrx/effects';
-import { DataPersistence } from '@nrwl/nx';
+import {
+  Effect,
+  Actions,
+  ofType,
+  ROOT_EFFECTS_INIT,
+  OnInitEffects
+} from '@ngrx/effects';
+import { DataPersistence } from '@nrwl/angular';
 
 import { LoginPartialState } from './login.reducer';
 import {
@@ -23,7 +29,6 @@ import { UserInfo, User } from 'firebase';
 
 @Injectable()
 export class LoginEffects implements OnInitEffects {
-
   // @Effect()
   // $init = of(new ListenAuth, asyncScheduler);
 
@@ -33,13 +38,27 @@ export class LoginEffects implements OnInitEffects {
       run: (action: ListenAuth, state: LoginPartialState) => {
         return <any>this.loginService.listenAuth().pipe(
           map((data: User) => {
-            if(data){
-              const { displayName, email, phoneNumber, photoURL, providerId, uid } = data;
-              return new AuthChanged({ displayName, email, phoneNumber, photoURL, providerId, uid });
+            if (data) {
+              const {
+                displayName,
+                email,
+                phoneNumber,
+                photoURL,
+                providerId,
+                uid
+              } = data;
+              return new AuthChanged({
+                displayName,
+                email,
+                phoneNumber,
+                photoURL,
+                providerId,
+                uid
+              });
             }
             return new AuthChanged(data);
           })
-        )
+        );
       },
 
       onError: (action: ListenAuth, error) => {
@@ -63,17 +82,20 @@ export class LoginEffects implements OnInitEffects {
     }
   );
 
-
   @Effect() loginUserWithFirebaseProvider$ = this.dataPersistence.fetch(
     LoginActionTypes.LoginUserWithFirebaseProvider,
     {
-      run: (action: LoginUserWithFirebaseProvider, state: LoginPartialState) => {
+      run: (
+        action: LoginUserWithFirebaseProvider,
+        state: LoginPartialState
+      ) => {
         // Your custom REST 'load' logic goes here. For now just return an empty list...
         return this.loginService.loginWithGoogle().pipe(
-          map((user) => {
+          map(user => {
             console.warn(user);
             return new LoginLoaded([]);
-          }));
+          })
+        );
       },
 
       onError: (action: LoginUserWithFirebaseProvider, error) => {
@@ -93,5 +115,5 @@ export class LoginEffects implements OnInitEffects {
     private dataPersistence: DataPersistence<LoginPartialState>,
     private loginService: LoginService,
     private loginModalUIService: LoginModalUIService
-  ) { }
+  ) {}
 }

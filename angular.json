@@ -20,7 +20,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/login/access-data/jest.config.js",
             "tsConfig": "libs/login/access-data/tsconfig.spec.json",
@@ -110,7 +110,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/sample-app/jest.config.js",
             "tsConfig": "apps/sample-app/tsconfig.spec.json",
@@ -125,7 +125,7 @@
       "prefix": "",
       "architect": {
         "e2e": {
-          "builder": "@nrwl/builders:cypress",
+          "builder": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/sample-app-e2e/cypress.json",
             "tsConfig": "apps/sample-app-e2e/tsconfig.e2e.json",
@@ -163,7 +163,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/login/ui/jest.config.js",
             "tsConfig": "libs/login/ui/tsconfig.spec.json",
@@ -189,7 +189,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/login/feature-shell/jest.config.js",
             "tsConfig": "libs/login/feature-shell/tsconfig.spec.json",
@@ -215,7 +215,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/dialog-ui/jest.config.js",
             "tsConfig": "libs/shared/dialog-ui/tsconfig.spec.json",
@@ -241,7 +241,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/login-ui/jest.config.js",
             "tsConfig": "libs/shared/login-ui/tsconfig.spec.json",
@@ -267,7 +267,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/login-dialog-ui/jest.config.js",
             "tsConfig": "libs/shared/login-dialog-ui/tsconfig.spec.json",
@@ -293,7 +293,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/login/utils/jest.config.js",
             "tsConfig": "libs/login/utils/tsconfig.spec.json",
@@ -344,7 +344,7 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics",
+    "defaultCollection": "@nrwl/angular",
     "packageManager": "npm"
   },
   "defaultProject": "login-access-data",
